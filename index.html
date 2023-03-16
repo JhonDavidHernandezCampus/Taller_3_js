@@ -13,20 +13,22 @@
         <legend>Datos de contacto de las Sedes de Campus</legend>
             
             <form id="myFormularioCampus">
-                <input type="text" name="nombreSede" placeholder="Nombre de la Sede"><br>
-
+                <input type="text" name="nombre_de_Sede" placeholder="Nombre de la Sede"><br>
                 <input type="submit" value="Guardar">
             </form>
 
     </fieldset>
     <fieldset>
         <legend>Datos de los campers Campus</legend>
-        
             <form id="myFormularioPersonas">
-                <select name="Sede"></select><br>
-                <input type="text" placeholder="Nombre"><br>
-                <input type="tel" placeholder="Numero telefonico"><br>
-                <input type="text" placeholder="otra cosa"><br>
+                <select name="Sede"></select>   
+                <select name="Teams">
+                    <option value="Teams_1">Teams_1</option>
+                    <option value="Teams_2">Teams_2</option>
+                </select><br>
+                <input type="text" name="Nombre" placeholder="Nombre"><br>
+                <input type="tel" name="Telefono" placeholder="Numero telefonico"><br>
+                <input type="email" name="email" placeholder="Correo electronico"><br>
                 <input type="submit" value="Guardar">
             </form>
     </fieldset>
