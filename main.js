@@ -1,6 +1,6 @@
 let myFormularioCampus = document.querySelector("#myFormularioCampus")
 let myFormularioPersonas = document.querySelector("#myFormularioPersonas")
-
+let myFormularioTrainers = document.querySelector("#myFormularioTrainers")
 let campus = {
 
 };
@@ -16,6 +16,8 @@ myFormularioCampus.addEventListener("submit",(e)=>{
 
     console.log(campus);
     listaSedes('[name="Sede"]', campus);
+    listaSedes('[name="SedeTrainers"]', campus);
+
 
     console.log("Datos del formulario",Object.fromEntries(new FormData(e.target)));
     myFormularioCampus.reset()
@@ -30,7 +32,7 @@ let opciones = document.querySelector(p1)
         `)        
     }
 
-    console.log(Object.entries(campus));/* me convierte un objeto a un araylist */
+    //console.log(Object.entries(campus));/* me convierte un objeto a un araylist */
 }
 
 
@@ -38,7 +40,8 @@ myFormularioPersonas.addEventListener("submit",(e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
     let camper = data.Sede;
-    delete data.camper;                       /* quitar propiedad de un objeto */
+    delete data.camper;                    /* quitar propiedad de un objeto */
+    console.log("datos de los campers"+data);
     campus[`${camper}`]["Campers"].unshift(data); 
     console.log(campus);
     myFormularioPersonas.reset()
@@ -46,5 +49,12 @@ myFormularioPersonas.addEventListener("submit",(e)=>{
 
 console.log(campus)
 
-
+myFormularioTrainers.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    let data = Object.fromEntries(new FormData(e.targe));
+    console.log("datos de los trainers"+data);
+    let trainers = data.Sede;
+    delete data.trainers;
+    campus[`${trainers}`]["Trainers"];
+})
 
