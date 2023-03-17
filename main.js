@@ -49,7 +49,6 @@ myFormularioPersonas.addEventListener("submit",(e)=>{
     myFormularioPersonas.reset()
 })
 
-
 myFormularioTrainers.addEventListener("submit",(e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
@@ -61,7 +60,6 @@ myFormularioTrainers.addEventListener("submit",(e)=>{
     myFormularioTrainers.reset()
     console.log(campus);
 })
-
 
 myFormularioNivel.addEventListener("submit",(e)=>{
     e.preventDefault();
@@ -75,24 +73,21 @@ myFormularioNivel.addEventListener("submit",(e)=>{
     console.log(campus);
 })
 
-
-
 myFormularioRoadmap.addEventListener("submit",(e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
-    let SedeRoadmap = data.sedeNivel
+    let SedeRoadmap = data.SedeRoadmap
     delete data.SedeRoadmap;
-    console.log("la sede niveles "+data.SedeRoadmap);
+    console.log("la sede roadmap "+data.SedeRoadmap);
     campus[`${SedeRoadmap}`]["Roadmap"].unshift(data);
 
     myFormularioRoadmap.reset()
     console.log(campus);
 })
 
-
 /* comienzo del desarrollo del ejercicio 2 */
 
-
+/* decir de cada trainer en que salon  */
 
 
 
