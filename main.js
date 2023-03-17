@@ -1,6 +1,8 @@
 let myFormularioCampus = document.querySelector("#myFormularioCampus")
 let myFormularioPersonas = document.querySelector("#myFormularioPersonas")
 let myFormularioTrainers = document.querySelector("#myFormularioTrainers")
+let myFormularioNivel = document.querySelector("#myFormularioNivel")
+let myFormularioRoadmap = document.querySelector("#myFormularioRoadmap")
 let campus = {
 
 };
@@ -13,11 +15,11 @@ myFormularioCampus.addEventListener("submit",(e)=>{
     let data = Object.fromEntries(new FormData(e.target));
     campus[`${data.nombre_de_Sede}`] = { Niveles:[],Roadmap:[],Campers:[],Trainers:[]
     };
-
     console.log(campus);
     listaSedes('[name="Sede"]', campus);
-    listaSedes('[name="SedeTrainers"]', campus);
-
+    listaSedes('[name="sedeTrainer"]', campus);
+    listaSedes('[name="sedeNivel"]', campus);
+    listaSedes('[name="SedeRoadmap"]', campus);
 
     console.log("Datos del formulario",Object.fromEntries(new FormData(e.target)));
     myFormularioCampus.reset()
@@ -40,21 +42,58 @@ myFormularioPersonas.addEventListener("submit",(e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
     let camper = data.Sede;
-    delete data.camper;                    /* quitar propiedad de un objeto */
+    delete data.camper;                     /* quitar propiedad de un objeto */
     console.log("datos de los campers"+data);
     campus[`${camper}`]["Campers"].unshift(data); 
     console.log(campus);
     myFormularioPersonas.reset()
 })
 
-console.log(campus)
 
 myFormularioTrainers.addEventListener("submit",(e)=>{
     e.preventDefault();
-    let data = Object.fromEntries(new FormData(e.targe));
-    console.log("datos de los trainers"+data);
-    let trainers = data.Sede;
-    delete data.trainers;
-    campus[`${trainers}`]["Trainers"];
+    let data = Object.fromEntries(new FormData(e.target));
+    let sedeTrainer = data.sedeTrainer
+    delete data.sedeTrainer;
+    console.log("la sede trainers "+data.sedeTrainer);
+    campus[`${sedeTrainer}`]["Trainers"].unshift(data);
+
+    myFormularioTrainers.reset()
+    console.log(campus);
 })
+
+
+myFormularioNivel.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    let data = Object.fromEntries(new FormData(e.target));
+    let sedeNivel = data.sedeNivel
+    delete data.sedeNivel;
+    console.log("la sede niveles "+data.sedeNivel);
+    campus[`${sedeNivel}`]["Niveles"].unshift(data);
+
+    myFormularioNivel.reset()
+    console.log(campus);
+})
+
+
+
+myFormularioRoadmap.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    let data = Object.fromEntries(new FormData(e.target));
+    let SedeRoadmap = data.sedeNivel
+    delete data.SedeRoadmap;
+    console.log("la sede niveles "+data.SedeRoadmap);
+    campus[`${SedeRoadmap}`]["Roadmap"].unshift(data);
+
+    myFormularioRoadmap.reset()
+    console.log(campus);
+})
+
+
+/* comienzo del desarrollo del ejercicio 2 */
+
+
+
+
+
 

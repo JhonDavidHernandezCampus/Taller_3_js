@@ -9,59 +9,144 @@
     <title>Document</title>
 </head>
 <body>
-    <fieldset>
-        <legend>Datos de contacto de las Sedes de Campus</legend>
-            <form id="myFormularioCampus">
-                <input type="text" name="nombre_de_Sede" placeholder="Nombre de la Sede">
-                <input type="number" placeholder="Telefono de la sede">
-                <input type="submit" value="Guardar">
-            </form>
-    </fieldset>
-    <fieldset>
-        <legend>Datos de los campers Campus</legend>
-            <form id="myFormularioPersonas">
-                <select name="Sede"></select>   
-                <select name="Teams">
-                    <option value="Teams_1">Teams_1</option>
-                    <option value="Teams_2">Teams_2</option>
+    <div class="container">
+        <fieldset>
+            <legend>Datos de contacto de las Sedes de Campus</legend>
+                <form id="myFormularioCampus">
+                    <input type="text" name="nombre_de_Sede" placeholder="Nombre de la Sede">
+                    <input type="number" placeholder="Telefono de la sede">
+                    <input type="submit" value="Guardar">
+                </form>
+        </fieldset>
+        <fieldset>
+            <legend>Datos de los campers Campus</legend>
+                <form id="myFormularioPersonas">
+                    <select name="Sede"></select>   
+                    <select name="Teams">
+                        <option value="Teams_1">Teams_1</option>
+                        <option value="Teams_2">Teams_2</option>
 
-                </select>
-                <select name="horario">
-                    <option value="mañana">6:00 am -2:00pm </option>
-                    <option value="tarde">2:00 am -10:00pm</option>
-                </select>
-                <select name="Teams">
-                    <option value="Moto">Moto</option>
-                    <option value="Carro">Carro</option>
-                    <option value="Pago">Pago </option>
-                </select><br>
-                <input type="text" name="Nombre" placeholder="Nombre"><br>
-                <input type="tel" name="Telefono" placeholder="Numero telefonico"><br>
-                <input type="email" name="email" placeholder="Correo electronico"><br>
-                <input type="submit" value="Guardar">
-            </form>
-    </fieldset>
+                    </select>
+                    <select name="horario">
+                        <option value="null">Jornada</option>
+                        <option value="mañana">6:00 am -2:00pm </option>
+                        <option value="tarde">2:00 am -10:00pm</option>
+                    </select>
+                    <select name="horarioingles">
+                        <option value="null">Horario de Ingles</option>
+                        <option value="8:00am - 9:00am">8:00am - 9:00am</option>
+                        <option value="9:00am - 10:00am">9:00am - 10:00am</option>
+                        <option value="4:00pm - 5:00pm">4:00pm - 5:00pm</option>
+                        <option value="5:00pm - 6:00pm">5:00pm - 6:00pm</option>
+                    </select>
+                    <select name="horarioser">
+                        <option value="null">Horario de ser</option>
 
-    <fieldset>
-        <legend>Datos de los Trainers Campus</legend>
-            <form id="myFormularioTrainers">
-                <select name="SedeTrainers"></select>   
-                <select name="Teams">
-                    <option value="Teams_1">Teams_1</option>
-                    <option value="Teams_2">Teams_2</option>
+                        <option value="8:00am - 9:00am">8:00am - 9:00am</option>
+                        <option value="9:00am - 10:00am">10:00am - 11:00am</option>
+                        <option value="4:00pm - 5:00pm">4:00pm - 5:00pm</option>
+                        <option value="5:00pm - 6:00pm">6:00pm - 7:00pm</option>
+                    </select>
+                    <select name="Teams">
+                        <option value="Moto">Moto</option>
+                        <option value="Carro">Carro</option>
+                        <option value="Pago">Pago </option>
+                    </select><br>
+                    <input type="text" name="Nombre" placeholder="Nombre"><br>
+                    <input type="tel" name="Telefono" placeholder="Numero telefonico"><br>
+                    <input type="email" name="email" placeholder="Correo electronico"><br>
+                    <input type="submit" value="Guardar">
+                </form>
+        </fieldset>
 
-                </select>
-                <select name="horario">
-                    <option value="mañana">6:00 am -2:00pm </option>
-                    <option value="tarde">2:00 am -10:00pm</option>
-                </select><br>
-                <input type="text" name="Nombre" placeholder="Nombre"><br>
-                <input type="tel" name="Telefono" placeholder="Numero telefonico"><br>
-                <input type="email" name="email" placeholder="Correo electronico"><br>
-                <input type="submit" value="Guardar">
-            </form>
-    </fieldset>
-        
-    
+        <fieldset>
+            <legend>Datos de los Trainers Campus</legend>
+                <form id="myFormularioTrainers">
+                    <select name="sedeTrainer"></select>   
+                    <select name="Teams">
+                        <option value="Teams_1">Teams_1</option>
+                        <option value="Teams_2">Teams_2</option>
+                    </select>
+                    <select name="sala">
+                        <option value="null">Salon</option>
+                        <option value="Spuknit">Spuknit</option>
+                        <option value="Artemis">Artemis</option>
+                        <option value="Apolo">Apolo</option>
+                        <option value="Auditorio">Apolo</option>
+                        <option value="Review">Review</option>
+
+                    </select> 
+                    <select name="piso" >
+                        <option value="null">Numero de piso</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <select name="horario">
+                        <option value="null">Jornada</option>
+                        <option value="mañana">6:00 am -2:00pm </option>
+                        <option value="tarde">2:00 am -10:00pm</option>
+                    </select><br>
+                    <input type="text" name="Nombre" placeholder="Nombre"><br>
+                    <input type="tel" name="Telefono" placeholder="Numero telefonico"><br>
+                    <input type="email" name="email" placeholder="Correo electronico"><br>
+                    <input type="submit" value="Guardar">
+                </form>
+        </fieldset>
+        <fieldset>
+            <legend>Niveles en Campus</legend>
+                <form id="myFormularioNivel">
+                    <select name="sedeNivel"></select>
+                    <select name="nivel" >
+                        <option value="null">Nivel</option>
+                        <option value="Aprendis">Aprendis</option>
+                        <option value="Intermedio">Intermedio</option>
+                        <option value="Abanzado">Abanzado</option>
+                    </select>
+                    <select name="tipoformacion">
+                        <option value="null">Tipo de formacion</option>
+                        <option value="tecnico">Tecnico</option>
+                        <option value="tecnologia">Tecnologia</option>
+                        <option value="profecional">Profecional</option>
+                    </select><br>
+                    <input type="submit" value="Guardar">
+                </form>
+        </fieldset>
+        <fieldset>
+            <legend>Datos del Roadmap en Campus</legend>
+                <form id="myFormularioRoadmap">
+                    <select name="SedeRoadmap"></select>   
+                    <select name="sala">
+                        <option value="null">Caracter</option>
+                        <option value="Electiva">Electiva</option>
+                        <option value="Obligatoria">Obligatoria</option>
+
+                    </select>
+                    <select name="Caracter">
+                        <option value="null">Caracter</option>
+                        <option value="Electiva">Electiva</option>
+                        <option value="Obligatoria">Obligatoria</option>
+
+                    </select>
+                    <select name="sala">
+                        <option value="null">Salon</option>
+                        <option value="Spuknit">Spuknit</option>
+                        <option value="Artemis">Artemis</option>
+                        <option value="Apolo">Apolo</option>
+                        <option value="Auditorio">Apolo</option>
+                        <option value="Review">Review</option>
+
+                    </select> <br>
+                    <input type="text" name="Asignatura" placeholder="Asignatura"><br>
+                    <input type="tel" name="Creditos" placeholder="Creditos"><br>
+                    <input type="email" name="Tiempo_estudio" placeholder="Duracion del programa"><br>
+                    <input type="submit" value="Guardar">
+                </form>
+        </fieldset>
+    </div>
+
 </body>
 </html>
