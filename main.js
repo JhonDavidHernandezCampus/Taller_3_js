@@ -1,23 +1,23 @@
 let myFormularioCampus = document.querySelector("#myFormularioCampus")
 let myFormularioPersonas = document.querySelector("#myFormularioPersonas")
 
-let campus = {sedes:[]
+let campus = {
 
 };
+
+
 
 
 myFormularioCampus.addEventListener("submit",(e)=>{
     e.preventDefault();/* para que el formulario no me redireccione a otra pagina */
     let data = Object.fromEntries(new FormData(e.target));
-    campus[`${data.nombre_de_Sede}`] = { "Campers":[]
+    campus[`${data.nombre_de_Sede}`] = { Niveles:[],Roadmap:[],Campers:[],Trainers:[]
     };
 
-
     console.log(campus);
-
     listaSedes('[name="Sede"]', campus);
 
-    console.log("Objeto",Object.fromEntries(new FormData(e.target)));
+    console.log("Datos del formulario",Object.fromEntries(new FormData(e.target)));
     myFormularioCampus.reset()
 })
 
@@ -33,25 +33,18 @@ let opciones = document.querySelector(p1)
     console.log(Object.entries(campus));/* me convierte un objeto a un araylist */
 }
 
+
 myFormularioPersonas.addEventListener("submit",(e)=>{
-    console.log("..");
-    console.log("..");
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
-    let sede = data.Sede;
-
-    console.log(sede);
-    console.log(data.nombre_de_Sede);
-    delete data.sede;                       /* quitar propiedad de un objeto */
-
-    campus[`${sede}`]["Campers"].unshift(data); 
-
+    let camper = data.Sede;
+    delete data.camper;                       /* quitar propiedad de un objeto */
+    campus[`${camper}`]["Campers"].unshift(data); 
+    console.log(campus);
     myFormularioPersonas.reset()
 })
 
 console.log(campus)
-
-
 
 
 

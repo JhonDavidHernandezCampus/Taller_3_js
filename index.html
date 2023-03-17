@@ -11,12 +11,11 @@
 <body>
     <fieldset>
         <legend>Datos de contacto de las Sedes de Campus</legend>
-            
             <form id="myFormularioCampus">
-                <input type="text" name="nombre_de_Sede" placeholder="Nombre de la Sede"><br>
+                <input type="text" name="nombre_de_Sede" placeholder="Nombre de la Sede">
+                <input type="number" placeholder="Telefono de la sede">
                 <input type="submit" value="Guardar">
             </form>
-
     </fieldset>
     <fieldset>
         <legend>Datos de los campers Campus</legend>
@@ -25,6 +24,11 @@
                 <select name="Teams">
                     <option value="Teams_1">Teams_1</option>
                     <option value="Teams_2">Teams_2</option>
+
+                </select>
+                <select name="horario">
+                    <option value="mañana">6:00 am -2:00pm </option>
+                    <option value="tarde">2:00 am -10:00pm</option>
                 </select><br>
                 <input type="text" name="Nombre" placeholder="Nombre"><br>
                 <input type="tel" name="Telefono" placeholder="Numero telefonico"><br>
