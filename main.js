@@ -21,6 +21,8 @@ myFormularioCampus.addEventListener("submit",(e)=>{
     listaSedes('[name="sedeNivel"]', campus);
     listaSedes('[name="SedeRoadmap"]', campus);
 
+    console.log("imprimo formulario campus",myFormularioCampus);
+    mostarFormularios();
     console.log("Datos del formulario",Object.fromEntries(new FormData(e.target)));
     myFormularioCampus.reset()
 })
@@ -88,7 +90,47 @@ myFormularioRoadmap.addEventListener("submit",(e)=>{
 /* comienzo del desarrollo del ejercicio 2 */
 
 /* decir de cada trainer en que salon  */
+function mostrarAsignaturaTrainers(){
+    console.log("Me muestra los campers de campus"+campus.Campers);
+    console.log("Me muestra a los triners de campus"+campus.Trainers)
+}
+
+/* esta es la funcion que me controla la acion de mostarme los 
+formularios correspondientes para cada selecion */
+function mostarFormularios(){
+    const tipo2 = document.formulario.tipo.selectedIndex
+    /* document.querySelector(".campers").style.display="block"; */
+    if(tipo2 ==1 ){
+        document.querySelector(".campers").style.display="none";
+        document.querySelector(".nivel").style.display="none";
+        document.querySelector(".readmap").style.display="none";
+        document.querySelector(".mostar").style.display="none";
 
 
+        document.querySelector(".trainers").style.display="block";
+        document.querySelector(".nivel").style.display="block";
+        document.querySelector(".readmap").style.display="block";}
+    else if(tipo2 == 2){
+        document.querySelector(".trainers").style.display="none";
+        document.querySelector(".nivel").style.display="none";
+        document.querySelector(".readmap").style.display="none";
+        document.querySelector(".mostar").style.display="none";
 
+
+        document.querySelector(".campers").style.display="block";
+        document.querySelector(".nivel").style.display="block";
+        document.querySelector(".readmap").style.display="block";}
+    else if(tipo2 == 3){
+        document.querySelector(".campers").style.display="none";
+        document.querySelector(".nivel").style.display="none";
+        document.querySelector(".readmap").style.display="none";
+
+        document.querySelector(".mostar").style.display="block";
+
+    }
+    else{
+        console.log("ingrese que desea agregar(campers o Trainers)?")
+    }
+
+}
 

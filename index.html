@@ -6,19 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
-    <title>Document</title>
+    <title>document</title>
+    
 </head>
+
 <body>
     <div class="container">
-        <fieldset>
+        <fieldset id="sede">
             <legend>Datos de contacto de las Sedes de Campus</legend>
-                <form id="myFormularioCampus">
+                <form id="myFormularioCampus" name="formulario">
                     <input type="text" name="nombre_de_Sede" placeholder="Nombre de la Sede">
                     <input type="number" placeholder="Telefono de la sede">
-                    <input type="submit" value="Guardar">
+                    <input type="submit" value="Guardar"><br>
+                    <select name="tipo" id="tipo">
+                        <option disabled selected>Selecciona Tipo de gestion</option>
+                        <option value="Trainer">Agregar Trainers</option>
+                        <option value="Camper">Agregar Campers</option>
+                        <option value="Camper">Consultar Trainers</option>
+
+                    </select>
                 </form>
         </fieldset>
-        <fieldset>
+        <fieldset class="campers">
             <legend>Datos de los campers Campus</legend>
                 <form id="myFormularioPersonas">
                     <select name="Sede"></select>   
@@ -58,8 +67,7 @@
                     <input type="submit" value="Guardar">
                 </form>
         </fieldset>
-
-        <fieldset>
+        <fieldset class="trainers">
             <legend>Datos de los Trainers Campus</legend>
                 <form id="myFormularioTrainers">
                     <select name="sedeTrainer"></select>   
@@ -96,7 +104,7 @@
                     <input type="submit" value="Guardar">
                 </form>
         </fieldset>
-        <fieldset>
+        <fieldset class="nivel">
             <legend>Niveles en Campus</legend>
                 <form id="myFormularioNivel">
                     <select name="sedeNivel"></select>
@@ -115,7 +123,7 @@
                     <input type="submit" value="Guardar">
                 </form>
         </fieldset>
-        <fieldset>
+        <fieldset class="readmap">
             <legend>Datos del Roadmap en Campus</legend>
                 <form id="myFormularioRoadmap">
                     <select name="SedeRoadmap"></select>   
@@ -145,8 +153,20 @@
                     <input type="email" name="Tiempo_estudio" placeholder="Duracion del programa"><br>
                     <input type="submit" value="Guardar">
                 </form>
-        </fieldset>
+        </fieldset>   
+        <fieldset class="mostar">
+            <legend>Consultar datos de los trainers</legend>
+                <form id="myFormularioConsultas">
+                    <input type="text" name="nombre_de_Sede" placeholder="Nombre del trainers que desea buscar">
+                    <input type="number" placeholder="Telefono de la sede">
+                    <input type="submit" value="Guardar"><br>
+                    <select name="tipo" id="tipo">
+                        <option disabled selected>Selecciona Tipo de gestion</option>
+                        <option value="Trainer">Agregar Trainers</option>
+                        <option value="Camper">Agregar Campers</option>
+                    </select>
+                </form>
+        </fieldset>   
     </div>
-
 </body>
 </html>
